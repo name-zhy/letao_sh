@@ -50,7 +50,7 @@ $(function(){
                 console.log(info);
                 if(info.success){
                     // alert("验证成功")
-                    localStorage.href="index.html";
+                    location.href="index.html";
                 };
                 if(info.error === 1000){
                     // alert('用户不存在')

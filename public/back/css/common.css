@@ -1,12 +1,138 @@
 .body_bg{
     background-color: #222D32
 }
+html,body{
+    height: 100%;
+    width: 100%;
+}
+a:link,
+a:visited,
+a:hover,
+a:active{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
 .mt_150{
     margin-top: 150px;
     
 }
+.red{
+    color: red;
+}
+
+
 .panel-title{
     height: 40px;
     line-height: 40px;
     font-size: 20px;
+}
+.lt_aside{
+    width: 180px;
+    height: 100%;
+    background-color: #222D32;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: all 1s;
+}
+.lt_aside.hidemenu{
+    left: -180px;
+}
+.lt_aside .brand{
+    height: 50px;
+    line-height: 50px;
+    background-color: #367FA9;
+    font-size: 24px;
+    text-align: center;
+}
+.lt_aside .brand a{
+    color: #fff;
+}
+
+.user{
+    padding-top: 30px;
+    height: 180px;
+}
+.user img{
+    height: 80px;
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.user p{
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.nav ul a{
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    display: block;
+    padding-left: 40px;
+    border-left: 3px solid transparent;
+}
+.nav ul a i{
+    margin-right: 5px;   
+}
+.nav ul a.current{
+    border-left: 3px solid #006699;
+    background-color: #1D1F21;
+}
+.nav li .child a{
+    padding-left: 60px;
+}
+
+
+
+
+
+
+.lt_main .lt_topbar{
+    height: 50px;
+    width: 100%;
+    background-color: #3C8DBC;
+    line-height: 50px;
+    padding-left: 180px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: all 1s;
+}
+.lt_topbar.hidemenu{
+    padding-left: 0;
+}
+.lt_main.hidemenu{
+    padding-left: 0;
+}
+.lt_main{
+    height: 1000px;
+    width: 100%;
+    background-color: pink;
+    padding-top: 50px;
+    padding-left: 180px;
+    transition: all 1s;
+}
+
+.lt_main .lt_topbar a{
+    height: 50px;
+    width: 50px;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+.container-fluid{
+    margin-top: 20px;
 }
