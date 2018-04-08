@@ -1,17 +1,39 @@
-$(function(){
-    NProgress.configure({showSpinner:false});
-    $(document).ajaxStart(function(){
-        NProgress.start();
-    });
-    $(document).ajaxStart(function(){
-        setTimeout(function(){
-            NProgress.done();
-        },500)
+
+
+NProgress.configure({showSpinner:false});
+$(document).ajaxStart(function(){
+    NProgress.start();
+});
+$(document).ajaxStart(function(){
+    setTimeout(function(){
+        NProgress.done();
+    },500)
+});
+
+if(location.href.indexOf('login.html') === -1){
+    $.ajax({
+        url:'/employee/checkRootLogin',
+        type:'get',
+        dataType:'json',
+        success:function(info){
+            console.log(info);
+            if(info.success){
+
+            }
+            if(info.error == 400){
+                location.href = 'login.html';
+            }
+        }
     })
+}
+
+
+$(function(){
+    
 
 
     $('.category').click(function(){
-        $(this).next().slideToggle();
+        $(this).next().stop().slideToggle();
     });
 
     $('.icon_menu').click(function(){
@@ -37,4 +59,7 @@ $(function(){
             }
         })
     })
+
+
+    
 })
