@@ -1,0 +1,10 @@
+$(function(){
+    $('.category').click(function(){
+       $(this).next().slideToggle(); 
+    });
+    $('.icon_menu').click(function(){
+        $('.lt_aside').toggleClass('hidemenu');
+        $('.lt_topbar').toggleClass('hidemenu');
+        $('.lt_main').toggleClass('hidemenu');
+    })
+})
