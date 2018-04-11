@@ -1,0 +1,42 @@
+.itmbox{
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.li_price .price{
+    color: #FF3737;
+
+}
+.li_price .old{
+    font-size: 12px;
+    color: #666;
+    text-decoration: line-through;
+}
+.li_size span{
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: #F5F5F5;
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    padding: 0 4px;
+    margin: 4px 0;
+}
+.li_num span{
+    font-size: 12px;
+    color: #666;
+}
+
+
+.li_go_cart{
+    height: 55px;
+    padding: 10px 10px 0 10px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #EFEFF4;
+    border-top: 1px solid red;
+}
+.li_go_cart .go_cart{
+    padding: 5px;
+}

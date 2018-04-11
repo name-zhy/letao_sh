@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/searchList.css">
 </head>
 <body>
     <div class="li_container">
@@ -23,30 +23,29 @@
         <!-- 产品 -->
         <div class="li_section">
         <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
                <div class="li_search">
                     <input type="text" placeholder="请输入关键字">
                     <button class="mui-btn mui-btn-primary">搜索</button>
+                </div>
+               <div class="lt_sort">
+                <a href="#">上架时间 <i class="fa fa-angle-down"></i></a>
+                <a data-type='price' href="#">价格 <i class="fa fa-angle-down"></i></a>
+                <a data-type='num' href="#">库存 <i class="fa fa-angle-down"></i></a>
+                <a href="#">折扣 <i class="fa fa-angle-down"></i></a>
                </div>
-               <div class="lt_history">
-                    <div class="title mui-clearfix">
-                        <span class="mni-pull-left">搜索历史</span>
-                        <span class="mui-pull-right btn-empty">
-                            <i class="fa fa-trash"></i>
-                            清空历史记录
-                        </span>
-                    </div>
-                    <div class="conter">
-                        <ul>
-                            <li>
-                                <a href="#" class="mui-pull-left">1</a>
-                                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
-                            </li>
-                        </ul>
-                    </div>
-               </div>
+               <div class="lt_product mui-clearfix">
+                <a href="#">
+                    <img src="./images/product.jpg" alt="">
+                    <p>adidas阿迪达斯 男式 场下休闲篮球鞋S83700场下休闲篮球鞋S83700 </p>
+                    <p><span>¥560</span><span class="old">¥580</span></p>
+                    <button class="mui-btn mui-btn-primary">立即购买</button>
+                </a>
+
+                </div>
+       </div>
         </div>
-        
-        </div>
+    </div>
         <!-- 底部 -->
         <div class="li_foorter">
             <ul class="mui-clearfix">
@@ -59,31 +58,18 @@
     </div>
 </body>
 <script type="text/html" id="tmp">
-{{ if obj.length > 0}}
-    <div class="title mui-clearfix">
-        <span class="mni-pull-left">搜索历史</span>
-        <span class="mui-pull-right btn_empty">
-            <i class="fa fa-trash"></i>
-            清空历史记录
-        </span>
-    </div>
-    <div class="conter">
-        <ul>
-{{ each obj v i }}
-            <li>
-                <a href="searchList.html?key={{ v }}" class="mui-pull-left">{{ v }}</a>
-                <i data-index="{{ i }}" class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
-            </li>
-{{ /each }}
-        </ul>
-    </div>
-{{ else}}
-    <p>没有更多历史记录了</p>
-{{ /if }}
+    {{ each data v i }}
+        <a href="product.html?productId={{ v.id }}">
+            <img src="{{v.pic[0]? v.pic[0].picAddr:'images/none.png'}}" alt="">
+            <p>{{v.proName}}</p>
+            <p><span>¥{{v.price}}</span><span class="old">¥{{v.oldPrice}}</span></p>
+            <button class="mui-btn mui-btn-primary">立即购买</button>
+        </a>
+    {{ /each }}
 </script>
 <script src="./lib/mui/js/mui.min.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/search.js"></script>
+<script src="./js/searchList.js"></script>
 </html>
